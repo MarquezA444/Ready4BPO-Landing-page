@@ -1,0 +1,117 @@
+/* src/components/TrustBar/TrustBar.module.css */
+
+.trustBar {
+  position: relative;
+  padding: var(--space-12) 0;
+  background: var(--color-bg-surface);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  overflow: hidden;
+}
+
+.label {
+  text-align: center;
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-8);
+  opacity: 0.7;
+}
+
+/* ── Scroll track ── */
+.track {
+  display: flex;
+  gap: 0;
+  width: max-content;
+  animation: scrollTrack 40s linear infinite;
+}
+
+.track:hover {
+  animation-play-state: paused;
+}
+
+/* ── Individual logo item ── */
+.logoItem {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 2.5rem;
+  position: relative;
+  cursor: default;
+}
+
+/* Separator between logos */
+.logoItem::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 24px;
+  background: var(--color-border);
+  opacity: 0.5;
+}
+
+.logoName {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  color: var(--color-text-muted);
+  opacity: 0.4;
+  white-space: nowrap;
+  transition: all 350ms var(--ease-out);
+  user-select: none;
+}
+
+.logoItem:hover .logoName {
+  opacity: 1;
+  color: var(--color-primary);
+  text-shadow: 0 0 20px rgba(47, 255, 207, 0.2);
+  transform: scale(1.05);
+}
+
+/* ── Edge fade masks ── */
+.trustBar::before,
+.trustBar::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 8rem;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.trustBar::before {
+  left: 0;
+  background: linear-gradient(to right, var(--color-bg-surface), transparent);
+}
+
+.trustBar::after {
+  right: 0;
+  background: linear-gradient(to left, var(--color-bg-surface), transparent);
+}
+
+@keyframes scrollTrack {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 640px) {
+  .logoItem {
+    padding: 0 1.5rem;
+  }
+  .logoName {
+    font-size: 0.82rem;
+  }
+}
