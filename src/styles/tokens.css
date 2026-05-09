@@ -4,21 +4,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Urbanist:wght@400;600;800;900&display=swap');
 
 :root {
-  /* Colors */
+  /* Colors — Enterprise tokens */
   --color-bg-base: #020617;
-  --color-bg-surface: #0f172a;
-  --color-bg-elevated: #1e293b;
-  
-  --color-primary: #2FFFCF; /* Teal */
-  --color-secondary: #F5A623; /* Orange/Yellow */
-  --color-accent: #3b82f6; /* Blue */
-  
-  --color-text-primary: #f8fafc;
-  --color-text-muted: #94a3b8;
+  --color-bg-surface: #0D1B2E;
+  --color-bg-elevated: #112240;
+
+  --color-primary: #2FFFCF;             /* Action Teal */
+  --color-primary-dim: #2FFFCF26;       /* Teal w/ 15% alpha — glows/bg */
+  --color-secondary: #F5A623;           /* Gold — pricing/urgency */
+  --color-accent: #3b82f6;
+
+  --color-text-primary: #FFFFFF;
+  --color-text-secondary: #8892A4;
+  --color-text-muted: #4A5568;
   --color-text-inverse: #020617;
-  
-  --color-border: rgba(255, 255, 255, 0.1);
-  --color-glass: rgba(2, 6, 23, 0.6);
+
+  --color-border-subtle: #1E3A5F;       /* Separators/card borders */
+  --color-border-glow: #2FFFCF40;       /* Premium hover/active */
+  --color-border: #1E3A5F;              /* Legacy alias */
+  --color-glass: rgba(13, 27, 46, 0.6);
 
   /* Typography */
   --font-sans: 'Inter', sans-serif;
